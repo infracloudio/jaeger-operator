@@ -141,7 +141,7 @@ func (q *Query) Get() *appsv1.Deployment {
 		Spec: appsv1.DeploymentSpec{
 			Replicas: q.jaeger.Spec.Query.Replicas,
 			Selector: &metav1.LabelSelector{
-				MatchLabels: commonSpec.Labels,
+				MatchLabels: labels,
 			},
 			Strategy: strategy,
 			Template: corev1.PodTemplateSpec{

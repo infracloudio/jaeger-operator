@@ -144,7 +144,7 @@ func (i *Ingester) Get() *appsv1.Deployment {
 		Spec: appsv1.DeploymentSpec{
 			Replicas: i.jaeger.Spec.Ingester.Replicas,
 			Selector: &metav1.LabelSelector{
-				MatchLabels: commonSpec.Labels,
+				MatchLabels: labels,
 			},
 			Strategy: strategy,
 			Template: corev1.PodTemplateSpec{
